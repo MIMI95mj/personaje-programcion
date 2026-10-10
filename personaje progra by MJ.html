@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siempre Observados | Lía Torres</title>
+
+    <style>
+        /* Paleta de colores del afiche */
+        :root {
+            --negro-azulado: #101722;
+            --gris-acero: #303B4A;
+            --gris-frio: #AAB8CC;
+            --blanco-frio: #DCE3EC;
+            --rojo-alerta: #D52C43;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--negro-azulado);
+            color: var(--blanco-frio);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 22px 8%;
+            background-color: #080D14;
+            border-bottom: 2px solid var(--rojo-alerta);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            margin: 0;
+            color: var(--blanco-frio);
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--rojo-alerta);
+        }
+
+        nav a {
+            color: var(--blanco-frio);
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--rojo-alerta);
+        }
+
+        .hero {
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: linear-gradient(125deg, var(--negro-azulado), var(--gris-acero));
+        }
+
+        .presentacion {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .etiqueta {
+            color: var(--rojo-alerta);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            color: white;
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.05;
+        }
+
+        h2 {
+            color: var(--blanco-frio);
+        }
+
+        .subtitulo {
+            margin-top: 0;
+            color: var(--gris-frio);
+            font-size: 20px;
+        }
+
+        .frase {
+            border-left: 3px solid var(--rojo-alerta);
+            padding-left: 16px;
+            margin: 28px 0;
+            font-size: 21px;
+            font-style: italic;
+        }
+
+        .datos {
+            width: 270px;
+            max-width: 100%;
+            padding: 24px;
+            background-color: rgba(16, 23, 34, 0.8);
+            border: 1px solid var(--gris-frio);
+            border-top: 3px solid var(--rojo-alerta);
+        }
+
+        .datos p {
+            margin: 10px 0;
+        }
+
+        .datos strong {
+            color: var(--gris-frio);
+        }
+
+        section {
+            padding: 45px 8%;
+        }
+
+        .biografia {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .biografia h2 {
+            margin-top: 0;
+            font-size: 30px;
+        }
+
+        .biografia p {
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .alerta {
+            margin-top: 28px;
+            padding: 18px 20px;
+            background-color: var(--gris-acero);
+            border-left: 4px solid var(--rojo-alerta);
+            color: var(--blanco-frio);
+        }
+
+        button {
+            margin-top: 18px;
+            padding: 13px 20px;
+            background-color: var(--rojo-alerta);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #B51F35;
+        }
+
+        #mensaje {
+            color: var(--rojo-alerta);
+            font-weight: bold;
+            min-height: 28px;
+        }
+
+        footer {
+            padding: 24px 8%;
+            text-align: center;
+            background-color: #080D14;
+            border-top: 1px solid var(--gris-acero);
+            color: var(--gris-frio);
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px 6%;
+            }
+
+            nav a {
+                margin: 0 12px 0 0;
+            }
+
+            .hero {
+                padding: 45px 6%;
+            }
+
+            section {
+                padding: 35px 6%;
+            }
+
+            .datos {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p class="logo">SIEMPRE <span>OBSERVADOS</span></p>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#biografia">Biografía</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero" id="inicio">
+            <div class="presentacion">
+                <p class="etiqueta">AÑO 2089 · PÉRDIDA DE PRIVACIDAD</p>
+                <h1>LÍA TORRES</h1>
+                <p class="subtitulo">Agente del sistema de vigilancia</p>
+
+                <p class="frase">“El sistema también nos mira”.</p>
+
+                <p>
+                    En una ciudad donde cada movimiento queda registrado,
+                    una agente comienza a cuestionar las reglas que debe proteger.
+                </p>
+
+                <button onclick="consultarExpediente()">
+                    Consultar expediente
+                </button>
+                <p id="mensaje"></p>
+            </div>
+
+            <aside class="datos">
+                <p class="etiqueta">EXPEDIENTE S-2089-047</p>
+                <p><strong>Nombre:</strong> Lía Torres</p>
+                <p><strong>Edad:</strong> 28 años</p>
+                <p><strong>Año:</strong> 2089</p>
+                <p><strong>Ocupación:</strong> Agente del sistema</p>
+                <p><strong>Estado:</strong> En observación</p>
+            </aside>
+        </div>
+
+        <section id="biografia">
+            <div class="biografia">
+                <p class="etiqueta">ARCHIVO PERSONAL · CLASIFICADO</p>
+                <h2>Biografía</h2>
+
+                <p>
+                    Lía Torres tiene 28 años y vive en el año 2089, en una sociedad
+                    donde la vigilancia es obligatoria y cada movimiento de los
+                    ciudadanos queda registrado. Trabaja como agente del sistema,
+                    supervisando cámaras y analizando información para mantener el
+                    control de la ciudad. Durante años creyó que su labor era
+                    necesaria para proteger a las personas, hasta que descubrió
+                    que sus datos también se utilizaban para limitar su libertad.
+                    Disciplinada, observadora y reservada, Lía comienza a cuestionar
+                    el sistema del que forma parte. Ahora deberá decidir entre
+                    seguir obedeciendo las órdenes o arriesgarlo todo para defender
+                    el derecho a la privacidad.
+                </p>
+
+                <div class="alerta">
+                    <strong>ADVERTENCIA DEL SISTEMA:</strong>
+                    la actividad de este expediente puede estar siendo registrada.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>SIEMPRE OBSERVADOS · 2089</p>
+        <p>¿Quién vigila a quienes nos vigilan?</p>
+    </footer>
+
+    <script>
+        function consultarExpediente() {
+            document.getElementById("mensaje").textContent =
+                "ALERTA: Tu actividad está siendo registrada.";
+        }
+    </script>
+
+</body>
+</html>
